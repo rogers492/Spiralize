@@ -1,0 +1,7 @@
+.spiralizeFieldset { float: left; width: 300px; font-family: Helvetica, sans-serif; font-size: 90%;  background-color: silver;
+}
+.spiralizeInput { width: 30px;
+}
+
+button { margin: 2px; background-color: dimgrey; color: silver; padding: 20px; }
+input { width: 20px; }

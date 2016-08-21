@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spiralize!</title>
+  <link href="spiralize.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+
+<fieldset class="spiralizeFieldset">
+<fieldset class="spiralizeFieldset">
+  <legend>Origin:</legend>
+  <label>x:<input id="xOrg" type="text" name="xOrigin" class="spiralizeInput"/></label>
+  <label>y:<input id="yOrg" type="text" name="yOrigin" class="spiralizeInput"/></label>
+</fieldset>
+
+<fieldset class="spiralizeFieldset">
+  <legend>Spiral:</legend>
+        <input id="golden" type="radio" name="spiralSelected" value="golden" checked="checked" onchange="if( this.checked ) { spiralSelected = this.value }"/> golden
+  <br /><input id="archimedes" type="radio" name="spiralSelected" value="archimedes" onchange="if( this.checked ) { spiralSelected = this.value }"/> archimedes;
+    <label>where a = <input id="aSca" type="text" name="aScale" class="spiralizeInput"/></label>
+  <br /><input id="parabolic" type="radio" name="spiralSelected" value="parabolic" onchange="if( this.checked ) { spiralSelected = this.value }"/> parabolic
+  <br /><input id="r=t^p" type="radio" name="spiralSelected" value="r=t^p" onchange="if( this.checked ) { spiralSelected = this.value }"/> r = t<sup>p</sup>;
+    <label>where p = <input id="pPow" type="text" name="pPower" class="spiralizeInput"/></label>
+  <br /><input id="simple equiangular" type="radio" name="spiralSelected" value="simple equiangular" onchange="if( this.checked ) { spiralSelected = this.value }"/> simple equiangular
+  <br /><input id="equiangular" type="radio" name="spiralSelected" value="equiangular" onchange="if( this.checked ) { spiralSelected = this.value }"/> equiangular;
+    <label>where c = <input id="cSca" type="text" name="cScale" class="spiralizeInput"/></label>
+    <label> b = <input id="bSca" type="text" name="bScale" class="spiralizeInput"/></label>
+  <br /><input id="powreciprocal" type="radio" name="spiralSelected" value="powreciprocal" onchange="if( this.checked ) { spiralSelected = this.value }"/> power reciprocal;
+    <label>where j = <input id="jSca" type="text" name="jScale" class="spiralizeInput"/></label>
+    <label> q = <input id="qPow" type="text" name="qPower" class="spiralizeInput"/></label>
+  <br /><input id="reciprocal" type="radio" name="spiralSelected" value="reciprocal" onchange="if( this.checked ) { spiralSelected = this.value }"/> reciprocal;
+    <label>where k = <input id="kSca" type="text" name="kScale" class="spiralizeInput"/></label>
+  <br /><input id="ln" type="radio" name="spiralSelected" value="ln" onchange="if( this.checked ) { spiralSelected = this.value }"/> i(ln(t));
+    <label>where i = <input id="iSca" type="text" name="iScale" class="spiralizeInput"/></label>
+  <br /><input id="showEquation" type="checkbox" name="caption" value="show" checked="checked" />Show equation caption
+</fieldset>
+<fieldset class="spiralizeFieldset">
+  <legend>Plot parameters:</legend>
+  <label>Max turns about the origin   - n:<input id="nTurns" type="text" name="nTurns" class="spiralizeInput" onchange="n = this.value * Math.PI"/></label>  n(pi)<br />
+  <label>Granularity of plotter steps - s:<input id="sSteps" type="text" name="sSteps" class="spiralizeInput" onchange="s = Math.PI/this.value"/></label>  (pi)/s
+</fieldset>
+
+<button type="button" onclick="spiralize(Number(xOrg.value), Number(yOrg.value))">Spiralize!</button>
+
+</fieldset>
+
+<canvas id="myCanvas" width="900" height="900" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script src="spiralizeInitialize.js"></script>
+
+
+<script src="spiralize.js"></script>
+
+</body>
+</html>
