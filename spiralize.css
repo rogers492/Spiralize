@@ -3,5 +3,9 @@
 .spiralizeInput { width: 30px;
 }
 
-button { margin: 2px; background-color: dimgrey; color: silver; padding: 20px; }
+button { margin: 2px; background-color: dimgrey; color: silver; padding: 5px; float: right; }
+textarea { margin 2px; width: 80%; }
 input { width: 20px; }
+select { width: 80%; }
+.spiralize { width: 80%; float: left; }
+.erase { width: 15%; }

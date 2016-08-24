@@ -53,10 +53,10 @@
       caption1 = "";
       caption2 = "";
 
-// now check if any previous session info was saved - if it was then use it to overide the defaults
+// now check what was last plotted and use it to overide the default
 
-if (localStorage.spiralSaved) {
-  spiralSelected = localStorage.spiralSaved;
+if (localStorage.spiralLastPlotted) {
+  spiralSelected = localStorage.spiralLastPlotted;
   radiobtn = document.getElementById(spiralSelected);
   radiobtn.checked = true;
 }

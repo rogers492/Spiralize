@@ -1,7 +1,7 @@
 
 function spiralize(xOriginNew, yOriginNew) {
   // save the spiral selected
-    localStorage.spiralSaved = spiralSelected;
+    localStorage.spiralLastPlotted = spiralSelected;
   // check if the User has changed the origin and if so, set the new origins for both spiral plot and caption text
     //console.log("org", xTextOrigin, yTextOrigin);
   if ( xOriginNew != xOrigin ) {
@@ -136,4 +136,11 @@ function spiralize(xOriginNew, yOriginNew) {
       yTextOrigin = -textOriginTranspose;
       // console.log("ro2", xTextOrigin, yTextOrigin);
   }
+}
+
+// this is the event handler for the ERASE button
+function spiralizeErase(xOriginNew, yOriginNew) {
+        ctx.strokeStyle = "white";
+        spiralize(Number(xOrg.value), Number(yOrg.value));
+        ctx.strokeStyle = "red";
 }

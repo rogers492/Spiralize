@@ -8,6 +8,7 @@
 
 
 <fieldset class="spiralizeFieldset">
+
 <fieldset class="spiralizeFieldset">
   <legend>Origin:</legend>
   <label>x:<input id="xOrg" type="text" name="xOrigin" class="spiralizeInput"/></label>
@@ -35,23 +36,40 @@
     <label>where i = <input id="iSca" type="text" name="iScale" class="spiralizeInput"/></label>
   <br /><input id="showEquation" type="checkbox" name="caption" value="show" checked="checked" />Show equation caption
 </fieldset>
+
 <fieldset class="spiralizeFieldset">
   <legend>Plot parameters:</legend>
   <label>Max turns about the origin   - n:<input id="nTurns" type="text" name="nTurns" class="spiralizeInput" onchange="n = this.value * Math.PI"/></label>  n(pi)<br />
   <label>Granularity of plotter steps - s:<input id="sSteps" type="text" name="sSteps" class="spiralizeInput" onchange="s = Math.PI/this.value"/></label>  (pi)/s
 </fieldset>
 
-<button type="button" onclick="spiralize(Number(xOrg.value), Number(yOrg.value))">Spiralize!</button>
+<div>
+<button class="spiralize" type="button" onclick="spiralize(Number(xOrg.value), Number(yOrg.value))">Spiralize!</button>
+<button id="spiralErase" class="erase" type="button" onclick="spiralizeErase(Number(xOrg.value), Number(yOrg.value))">Erase</button>
+</div>
 
+<div>
+<button id="spiralSave" type="button">Save</button>
+<textarea id="spiralDesc" name="spiralDesc" >description</textarea>
+</div>
+
+<hr />
+<button id="spiralLoad" type="button">Load</button>
+<br /><select id="spiralSavedList" name="spiralSavedList"></select>
 </fieldset>
 
 <canvas id="myCanvas" width="900" height="900" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script src="spiralizeInitialize.js"></script>
+<script src="spiralizeSave.js"></script>
+<script src="spiralizeLoad.js"></script>
+
 
 
 <script src="spiralize.js"></script>
+
+<button id="spiralClear" type="button" onclick="localStorage.clear()">Clear</button>
 
 </body>
 </html>
